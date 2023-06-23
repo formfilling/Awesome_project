@@ -2,6 +2,7 @@ import React from "react";
 import { Text, StyleSheet, View, Button } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
+
 // const HomeScreen = (props) => {
   const HomeScreen = ({navigation}) => {// we did destructring here of objects
   //otherwise we had to use probs.navigation.navigate
@@ -11,6 +12,10 @@ import { TouchableOpacity } from "react-native-gesture-handler";
    <Button 
     title="Counter Section"
     onPress={()=>{navigation.navigate('Counter')}}
+   />
+   <Button 
+    title="Color Section"
+    onPress={()=>{navigation.navigate('Color')}}
    />
   </View>
   )
