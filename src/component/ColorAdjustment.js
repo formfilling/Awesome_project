@@ -1,26 +1,52 @@
 import React from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
 
-const ColorAdjustment = (props) => {
-  const [clr, setClr] = React.useState(props.redrgb);
-
-//   console.log(clr)
+const ColorAdjustment = ({ color, onIncrease, onDecrese, rd ,bl, grn }) => {
+  
+  // console.log(color)
   return (
-
-    <View>
-      <Text>{props.colorTyp === "Red" || props.colorTyp === "red" ? props.colorTyp : null}</Text>
-      <Button
-        title="More Red"
-        onPress={() => {
-          setClr(clr + 1);
+    <View style={{ flexDirection: 'row' }}>
+      <Text>{color}</Text>
+      {/* <Button
+        title={`More ${color}`}
+        onPress={onIncrease}
+        // onPress={() => {
+        //   setClr(clr + 1);
+        // }}
+        style={{
+          height: 70,
+          width: 70,
+          marginLeft: 10,
         }}
-      />
-      <Button
-        title="Les Red"
-        onPress={() => {
-          setClr(clr - 1);
+      /> */}
+      <TouchableOpacity
+        onPress={onIncrease}
+        style={{
+          height: 70,
+          width: 70,
+          marginLeft: 20,
+          marginBottom: 5,
+          backgroundColor: '#42b3f5', // Example background color
         }}
-      />
+      >
+        <Text>More {color}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={onDecrese}
+        style={{
+          height: 70,
+          width: 70,
+          marginLeft: 10,
+          backgroundColor: '#42b3f5', // Example background color
+        }}
+      >
+        <Text>Less {color}</Text>
+      </TouchableOpacity>
+      {/* <Button
+        title={`Les ${color}`}
+        onPress={onDecrese}
+      /> */}
+      
     </View>
   );
 };
