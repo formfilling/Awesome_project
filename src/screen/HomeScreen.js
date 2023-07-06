@@ -21,6 +21,10 @@ import { TouchableOpacity } from "react-native-gesture-handler";
     title="Square Screen Section"
     onPress={()=>{navigation.navigate('Square')}}
    />
+   <Button 
+    title="Text Screen Section"
+    onPress={() => {navigation.navigate('Text')}}
+   />
   </View>
   )
 };
